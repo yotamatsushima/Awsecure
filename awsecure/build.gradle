@@ -20,7 +20,7 @@ dependencies {
 jar {
   manifest {
     attributes 'Implementation-Title': 'This Check aws configuration before Release', 'Implementation-Version': 1.1 
-    attributes "Main-Class" : "awstools.AwsEnvChecker"
+    attributes "Main-Class" : "awstools.awsecure"
   }
   from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
 }
