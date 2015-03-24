@@ -37,7 +37,7 @@ public class AWSClients
   private HashMap<String, AmazonWebServiceClient> clients = new HashMap();
   
   public AWSClients()
-  {
+  { 
     this.clients.put("ec2", new AmazonEC2Client(new DefaultAWSCredentialsProviderChain()));
     this.clients.put("s3", new AmazonS3Client(new DefaultAWSCredentialsProviderChain()));
     this.clients.put("dynamodb", new AmazonDynamoDBClient(new DefaultAWSCredentialsProviderChain()));

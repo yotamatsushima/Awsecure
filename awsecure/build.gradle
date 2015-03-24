@@ -1,5 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'findbugs'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
@@ -23,4 +24,11 @@ jar {
     attributes "Main-Class" : "awstools.awsecure"
   }
   from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+}
+findbugs {
+  ignoreFailures = true
+  toolVersion = "3.0.1"
+  sourceSets = [sourceSets.main]
+  reportsDir = file("$project.buildDir/reports/findbugs")
+  effort = "max"
 }
