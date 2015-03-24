@@ -21,7 +21,7 @@ dependencies {
 jar {
   manifest {
     attributes 'Implementation-Title': 'This Check aws configuration before Release', 'Implementation-Version': 1.1 
-    attributes "Main-Class" : "awstools.awsecure"
+    attributes "Main-Class" : "awstools.Awsecure"
   }
   from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
 }

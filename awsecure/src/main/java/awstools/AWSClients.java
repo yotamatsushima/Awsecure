@@ -106,7 +106,9 @@ public class AWSClients
       if (serviceName.equals("datapipeline")) {
         return !((DataPipelineClient)client).listPipelines().getPipelineIdList().isEmpty();
       }
-      if (!serviceName.equals("cloudfront")) {}
+      if (serviceName.equals("cloudfront")) {
+    	//return !((AmazonCloudFrontClient)client).
+      }
     }
     return false;
   }

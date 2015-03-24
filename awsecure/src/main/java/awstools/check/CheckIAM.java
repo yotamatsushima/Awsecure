@@ -42,14 +42,14 @@ public class CheckIAM
           output = output + instanceprofile.getInstanceProfileName();
         }
         writeln(output, false, 3);
-      }
-      catch (Exception e) {}
+      }//instances is just deleted now. exception cause.
+      catch (Exception e) {e.printStackTrace();}
       for (PolicyDetail policy : role.getRolePolicyList()) {
         try
         {
           writeln("policy(" + policy.getPolicyName() + "):" + URLDecoder.decode(policy.getPolicyDocument(), "utf-8"), false, 3);
         }
-        catch (Exception e) {}
+        catch (Exception e) {e.printStackTrace();return;}
       }
       closeFolder(2);
     }
@@ -67,7 +67,7 @@ public class CheckIAM
           writeln("groupName:" + group, false, 3);
         }
       }
-      catch (Exception e) {}
+      catch (Exception e) {e.printStackTrace();return;}
       if (this.accesskeyIsUseUser.get(user.getUserName()) != null) {
         writeln("AccessKey exist!" + setAlert(), false, 3);
       }

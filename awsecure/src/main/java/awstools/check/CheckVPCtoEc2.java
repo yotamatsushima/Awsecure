@@ -198,7 +198,7 @@ public class CheckVPCtoEc2
             output = output + " portRange:!!!ANY!!!!";
           }
           output = output + " ruleaction:" + aclentry.getRuleAction();
-          if ((aclentry.equals("0.0.0.0/0")) && (aclentry.getPortRange() == null) && (aclentry.getRuleAction().toLowerCase().equals("allow"))) {
+          if ((aclentry.getCidrBlock().equals("0.0.0.0/0")) && (aclentry.getPortRange() == null) && (aclentry.getRuleAction().toLowerCase().equals("allow"))) {
             output = output + setNG();
           }
           writeln(output, false, 6);

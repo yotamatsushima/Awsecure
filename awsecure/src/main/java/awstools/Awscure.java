@@ -10,7 +10,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.regions.Regions;
 import java.io.PrintStream;
 
-public class awscure
+public class Awscure
 {
   public static void main(String[] args)
   {
@@ -87,4 +87,5 @@ public class awscure
       e.printStackTrace();
     }
   }
+
 }
